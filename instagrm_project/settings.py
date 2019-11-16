@@ -71,9 +71,10 @@ TEMPLATES = [
     },
 ]
 
+from decouple import config
 UPLOADCARE = {
-    'pub_key': 'YOUR_PUBLIC_KEY',
-    'secret': 'YOUT_PRIVATE_KEY',
+    'pub_key': '64ba317bace04560c5b3',
+    'secret': config('SECRET'),
 }
 
 WSGI_APPLICATION = 'instagrm_project.wsgi.application'
@@ -114,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -127,3 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
