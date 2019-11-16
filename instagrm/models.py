@@ -11,13 +11,6 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-class Comment(models.Model):
-    comment = models.CharField(max_length=256)
-    user = models.ForeignKey(User)
-
-    def __str__(self):
-        return self.comment
-
 
 class Post(models.Model):
     image = ImageField(blank=False, manual_crop="800x800")
@@ -26,8 +19,16 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     likes = models.IntegerField(default=0)
     profile = models.ForeignKey(User)
-    comments = models.ManyToManyField(Comment)
     
     def __str__(self):
         return f"{self.name} - {self.caption}"
-    
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=256)
+    user = models.ForeignKey(User)
+    post = models.ForeignKey(Post)
+
+    def __str__(self):
+        return self.comment
+
+
