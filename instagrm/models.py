@@ -7,6 +7,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     profile_pic = ImageField(blank=True, manual_crop="800x800")
     bio = models.TextField(blank=True)
+    followers = models.ManyToManyField(User, related_name="followers")
+    following = models.ManyToManyField(User, related_name="following")
 
     def __str__(self):
         return self.user.username
@@ -22,6 +24,16 @@ class Post(models.Model):
     
     def __str__(self):
         return f"{self.name} - {self.caption}"
+
+    def save_post(self):
+        self.save()
+
+    def delete_post(self):
+        self.delete()
+
+    def update_caption(self, new_cap):
+        self.caption = new_cap
+        self.save()
 
 class Comment(models.Model):
     comment = models.CharField(max_length=256)

@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from instagrm import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('instagrm.urls')),
+    url(r'^register/$',views.register,name='register'),
+    url(r'^user_login/$',views.user_login,name='user_login'),
+    url(r'^logout/$', views.user_logout, name='logout'),
+
 ]
