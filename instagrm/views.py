@@ -11,7 +11,7 @@ from .forms import UserForm, UserProfileForm, CommentForm, PostForm
 @login_required
 def index(request):
     current_user = request.user
-    posts = Post.objects.all()
+    posts = Post.objects.all()[::-1]
     return render(request, "instagrm/index.html", context={"posts":posts,
                                                            "current_user":current_user})
 
@@ -19,7 +19,7 @@ def index(request):
 def profile(request, id):
     user = User.objects.get(id=id)
     profile = UserProfile.objects.get(id=id)
-    posts = Post.objects.filter(profile__id=id)
+    posts = Post.objects.filter(profile__id=id)[::-1]
     return render(request, "instagrm/profile.html", context={"user":user,
                                                              "profile":profile,
                                                              "posts":posts})
