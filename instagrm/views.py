@@ -9,6 +9,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, "instagrm/index.html", context={})
 
+def profile(request):
+    return render(request, "instagrm/profile.html", context={})
+
 def user_login(request):
     pass
 
