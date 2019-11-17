@@ -16,11 +16,15 @@
                 </div>
                 <img src="{{post.image.cdn_url}}" alt="" class="img-fluid">
                 <div class="card-body">
+                    <i class="far fa-heart fa-lg" style="font-size: 30px; margin-right:10px;"></i>
+                    <i class="far fa-comment fa-lg" style="font-size: 30px;"></i>
+                </div>
+                <div class="card-body">
                     <p class="card-text">{{post.caption}}</p>
                 </div>
                 <form class="card-footer" style="border:none; padding:0; display:flex">
                     <input type="text" class="form-control comment" placeholder="Add a comment..." style="border: 0 none transparent">
-                    <button style="background: #fff; border:none; border-radius:0; font-weight:bold; padding:10px">Post</button>
+                    <button style="background: #fff; border:none; border-radius:0; font-weight:bold; padding:10px;">Post</button>
                 </form>
             </div>
             {%endfor%}
