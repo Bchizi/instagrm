@@ -8,7 +8,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "email", "password")
+        fields = ("first_name", "last_name", "email", "password",)
 
 
 class UserProfileForm(forms.ModelForm):
@@ -24,7 +24,7 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ("caption", "image")
+        fields = ("caption", "image",)
 
 
 class CommentForm(forms.ModelForm):
@@ -32,4 +32,4 @@ class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ("comment")
+        fields = ("comment",)
