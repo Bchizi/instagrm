@@ -7,8 +7,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     profile_pic = ImageField(blank=True, manual_crop="800x800")
     bio = models.TextField(blank=True)
-    followers = models.ManyToManyField(User, related_name="followers")
-    following = models.ManyToManyField(User, related_name="following")
+    followers = models.ManyToManyField(User, related_name="followers", blank=True)
+    following = models.ManyToManyField(User, related_name="following", blank=True)
 
     def __str__(self):
         return self.user.username
@@ -21,6 +21,7 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     likes = models.IntegerField(default=0)
     profile = models.ForeignKey(User)
+    user_profile = models.ForeignKey(UserProfile)
     
     def __str__(self):
         return f"{self.name} - {self.caption}"

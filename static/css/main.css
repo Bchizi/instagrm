@@ -1,42 +1,53 @@
 /* NAVBAR STYLING*/
 
-#insta{
+#insta {
     font-family: 'Cookie', cursive;
-    font-size: 24px;
+    font-size: 28px;
     padding-bottom: 10px;
 }
-nav a{
+
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+nav a {
     font-size: 16px;
     font-weight: 300;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Lato', sans-serif;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     padding: 10px;
-    -webkit-border-radius:2px;
-    -moz-border-radius:2px;
-    border-radius:2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    cursor:pointer;
+    cursor: pointer;
     margin: 4px;
 }
-nav a:hover, navbar a:active, navbar a{
+
+nav a:hover,
+navbar a:active,
+navbar a {
     text-decoration: none;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
 }
-nav a:hover{
-    background: rgba(0,0,0,0.06);
+
+nav a:hover {
+    background: rgba(0, 0, 0, 0.06);
 }
-nav a:active{
-    color: rgba(0,0,0,0.9);
-    background: rgba(0,0,0,0.1);
+
+nav a:active {
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.1);
 }
-nav a{
+
+nav a {
     color: #5bc0de;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -45,21 +56,24 @@ nav a{
 }
 
 /*Setting Up Navbar Layouts*/
-nav .navbar-inverse{
+nav .navbar-inverse {
     color: #000;
     background: #fff;
-    border:none;
+    border: none;
     min-height: 50px;
     max-height: 50px;
     height: 50px;
 }
-nav .container-fluid{
+
+nav .container-fluid {
     position: absolute;
-    top:0; bottom: 0;
-    right:0;
-    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
-nav .navbar-body{
+
+nav .navbar-body {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -69,12 +83,14 @@ nav .navbar-body{
     height: 100%;
     position: relative;
 }
-nav div.navbar-end{
+
+nav div.navbar-end {
     align-items: flex-start;
     -webkit-align-items: flex-start;
 }
+
 nav div.navbar-start,
-nav div.navbar-end{
+nav div.navbar-end {
     flex: 1;
     -webkit-flex: 1;
     display: flex;
@@ -84,21 +100,22 @@ nav div.navbar-end{
     -webkit-align-items: center;
     justify-content: space-around;
 }
-nav div.navbar-start .logo{
+
+nav div.navbar-start .logo {
     opacity: 0.6;
-    width:30px;
+    width: 30px;
 }
 
 /*Styling Search Textbox*/
 
-nav form.search{
-    background: rgba(0,0,0,0.12);
+nav form.search {
+    background: rgba(0, 0, 0, 0.12);
     flex: 3;
     -webkit-flex: 3;
-    margin:6px;
-    -webkit-border-radius:2px;
-    -moz-border-radius:2px;
-    border-radius:2px;
+    margin: 6px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
     cursor: pointer;
     text-align: center;
     position: relative;
@@ -108,7 +125,8 @@ nav form.search{
     -o-transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
-nav form.search{
+
+nav form.search {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -117,23 +135,25 @@ nav form.search{
     align-items: center;
     -webkit-align-items: center;
     height: 42px;
-		width: 30px;
+    width: 30px;
     padding: 0 9px;
     overflow-x: hidden;
 }
-nav form.search.focused{
-    background: rgba(0,0,0,0.05);
+
+nav form.search.focused {
+    background: rgba(0, 0, 0, 0.05);
 }
-nav form.search .search-textbox{
+
+nav form.search .search-textbox {
     position: relative;
-    width:60px;
+    width: 60px;
     height: 100%;
     background: transparent;
     border: none;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     text-align: start;
-    color: rgba(0,0,0,1);
+    color: rgba(0, 0, 0, 1);
     outline: none;
     -webkit-transition: all 0.5s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.5s cubic-bezier(0.21, 0.61, 0.36, 1);
@@ -143,61 +163,70 @@ nav form.search .search-textbox{
     cursor: pointer;
 
 }
-nav form.search.focused .search-textbox{
-    width:100%;
+
+nav form.search.focused .search-textbox {
+    width: 100%;
     cursor: text;
 }
-nav form.search:hover span{
+
+nav form.search:hover span {
     -webkit-transform: translateX(40%);
     -moz-transform: translateX(40%);
     -ms-transform: translateX(40%);
     -o-transform: translateX(40%);
     transform: translateX(40%);
 }
-nav .ico-btn{
+
+nav .ico-btn {
     position: relative;
     width: 30px;
-    height:30px;
-    -webkit-border-radius:50%;
-    -moz-border-radius:50%;
-    border-radius:50%;
-    padding:5px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    padding: 5px;
 }
-nav .ico-btn.search-btn, .ico-btn.clear-btn{
-    padding:3px;
+
+nav .ico-btn.search-btn,
+.ico-btn.clear-btn {
+    padding: 3px;
     margin: 3px;
-		color: #333
+    color: #333
 }
-nav .ico-btn.clear-btn{
+
+nav .ico-btn.clear-btn {
     margin-right: -30px;
-    -webkit-animation:0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
-    -o-animation:0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
-    animation:0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
+    -webkit-animation: 0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
+    -o-animation: 0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
+    animation: 0.3s SwiftSlideToRight cubic-bezier(0.21, 0.61, 0.36, 1) 0.2s;
     -webkit-animation-delay: 0.2s;
     -moz-animation-delay: 0.2s;
     -o-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
-nav form.search.focused.not-null.multi-char .ico-btn.clear-btn{
+
+nav form.search.focused.not-null.multi-char .ico-btn.clear-btn {
     margin-right: 0;
     opacity: 1;
     visibility: visible;
-    -webkit-animation:0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
-    -o-animation:0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
-    animation:0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
+    -webkit-animation: 0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
+    -o-animation: 0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
+    animation: 0.3s SwiftSlide cubic-bezier(0.21, 0.61, 0.36, 1);
     -webkit-animation-delay: 0.2s;
     -moz-animation-delay: 0.2s;
     -o-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
-navbar .ico-btn{
+
+navbar .ico-btn {
     -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
-navbar form.search.focused.not-null .ico-btn.search-btn{
+
+navbar form.search.focused.not-null .ico-btn.search-btn {
     visibility: visible;
     opacity: 1;
     -webkit-transition-duration: 0.6s;
@@ -208,30 +237,35 @@ navbar form.search.focused.not-null .ico-btn.search-btn{
 }
 
 /*Styling Tabs*/
-nav .tabs .navbar-body li.active a{
+nav .tabs .navbar-body li.active a {
     color: #333;
 }
-nav .tabs .navbar-body li{
+
+nav .tabs .navbar-body li {
     -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
-nav .tabs .navbar-body li:hover{
-    background: rgba(0,0,0,0.02);
+
+nav .tabs .navbar-body li:hover {
+    background: rgba(0, 0, 0, 0.02);
 }
-nav .tabs .navbar-body li:active{
-    background: rgba(0,0,0,0.05);
+
+nav .tabs .navbar-body li:active {
+    background: rgba(0, 0, 0, 0.05);
 }
-nav .tabs .navbar-body li a:hover, .tabs .navbar-body li a:active{
-    background: rgba(0,0,0,0);
+
+nav .tabs .navbar-body li a:hover,
+.tabs .navbar-body li a:active {
+    background: rgba(0, 0, 0, 0);
     color: #5bc0de;
 }
 
 /*Styling Tab Highlighter*/
-nav .tab-highlighter{
-    height:2px;
+nav .tab-highlighter {
+    height: 2px;
     width: 50px;
     margin-top: -2px;
     background: #000;
@@ -245,14 +279,15 @@ nav .tab-highlighter{
 
 /*Keyframes*/
 @keyframes SwiftSlide {
-    100%{
+    100% {
         margin-right: 0;
         opacity: 1;
     }
 }
+
 @keyframes SwiftSlideToRight {
-    100%{
-        opacity:0;
+    100% {
+        opacity: 0;
         margin-right: -30px;
     }
 }
@@ -626,4 +661,26 @@ Remove or comment-out the code block below to see how the browser will fall-back
             margin: 0;
         }
     }
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline:0;
+    box-shadow: 0;
+}
+
+*:focus {
+    outline:0;
+    box-shadow: 0;
+}
+
+.comment.btn:focus{
+    outline-color: #fff;
+    outline: none;
 }
