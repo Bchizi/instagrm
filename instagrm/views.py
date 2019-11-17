@@ -17,7 +17,3 @@ def user_logout(request):
 
 def register(request):
     pass
-
-def register(request):
-    pass
-    
