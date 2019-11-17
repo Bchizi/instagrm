@@ -42,7 +42,7 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse("login"))
+    return HttpResponseRedirect(reverse("user_login"))
 
 def register(request):
     registered = False
@@ -66,6 +66,8 @@ def register(request):
 
             registered = True
 
+            return HttpResponseRedirect(reverse("user_login"))
+
         else:
             pass
 
@@ -73,7 +75,7 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileForm()
 
-    return render(request, "auth/register.html", context={"user-form":user_form,
-                                                          "profile-form":profile_form,
+    return render(request, "auth/register.html", context={"user_form":user_form,
+                                                          "profile_form":profile_form,
                                                           "registered":registered})
         
