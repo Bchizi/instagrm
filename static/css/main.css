@@ -90,7 +90,7 @@ nav div.navbar-start .logo{
 
 /*Styling Search Textbox*/
 
-nav div.search{
+nav form.search{
     background: rgba(0,0,0,0.12);
     flex: 3;
     -webkit-flex: 3;
@@ -107,7 +107,7 @@ nav div.search{
     -o-transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.3s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
-nav div.search{
+nav form.search{
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -120,10 +120,10 @@ nav div.search{
     padding: 0 9px;
     overflow-x: hidden;
 }
-nav div.search.focused{
+nav form.search.focused{
     background: rgba(0,0,0,0.05);
 }
-nav div.search .search-textbox{
+nav form.search .search-textbox{
     position: relative;
     width:60px;
     height: 100%;
@@ -142,11 +142,11 @@ nav div.search .search-textbox{
     cursor: pointer;
 
 }
-nav div.search.focused .search-textbox{
+nav form.search.focused .search-textbox{
     width:100%;
     cursor: text;
 }
-nav div.search:hover span{
+nav form.search:hover span{
     -webkit-transform: translateX(40%);
     -moz-transform: translateX(40%);
     -ms-transform: translateX(40%);
@@ -177,7 +177,7 @@ nav .ico-btn.clear-btn{
     -o-animation-delay: 0.2s;
     animation-delay: 0.2s;
 }
-nav div.search.focused.not-null.multi-char .ico-btn.clear-btn{
+nav form.search.focused.not-null.multi-char .ico-btn.clear-btn{
     margin-right: 0;
     opacity: 1;
     visibility: visible;
@@ -196,7 +196,7 @@ navbar .ico-btn{
     -o-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
-navbar div.search.focused.not-null .ico-btn.search-btn{
+navbar form.search.focused.not-null .ico-btn.search-btn{
     visibility: visible;
     opacity: 1;
     -webkit-transition-duration: 0.6s;
