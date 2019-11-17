@@ -3,19 +3,26 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, User, UserProfile
 from .forms import UserForm, UserProfileForm, CommentForm, PostForm
 
 
 # Create your views here.
 @login_required
 def index(request):
+    current_user = request.user
     posts = Post.objects.all()
-    return render(request, "instagrm/index.html", context={"posts":posts})
+    return render(request, "instagrm/index.html", context={"posts":posts,
+                                                           "current_user":current_user})
 
 @login_required
-def profile(request):
-    return render(request, "instagrm/profile.html", context={})
+def profile(request, id):
+    user = User.objects.get(id=id)
+    profile = UserProfile.objects.get(id=id)
+    posts = Post.objects.filter(profile__id=id)
+    return render(request, "instagrm/profile.html", context={"user":user,
+                                                             "profile":profile,
+                                                             "posts":posts})
 
 def user_login(request):
     
