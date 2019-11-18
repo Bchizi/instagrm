@@ -91,8 +91,8 @@ def search(request):
         message = "{}".format(search_term)
         
         return render(request, "instagrm/search_results.html", context={"message":message,
-                                                                        "user":searched_user,
-                                                                        "profile":searched_profile,
+                                                                        "users":searched_user,
+                                                                        "profiles":searched_profile,
                                                                         "posts":posts})
     else:
         message = "You have not searched for any photo"
