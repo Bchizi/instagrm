@@ -31,6 +31,13 @@
     <script src="{%static 'js/bootstrap.min.js'%}"></script>
     <script src="{%static 'js/all.min.js'%}"></script>
     <script src="{%static 'js/baguetteBox.min.js'%}"></script>
+    <script>
+        baguetteBox.run('.lightbox', {
+            animation: 'slideIn',
+            captions: true,
+            filter: /.*ucarecdn.*/i
+        });
+    </script>
     <script src="{%static 'js/main.js'%}"></script>
     {%endblock%}
 </body>
