@@ -73,6 +73,13 @@ def like(request, id):
     return HttpResponseRedirect(reverse("index"))
 
 
+def like_post(request, id):
+    post = Post.objects.get(id = id)
+    post.likes += 1
+    post.save()
+    return redirect("post", post.id)
+
+
 @login_required
 def profile(request, id):
     user = User.objects.get(id=id)

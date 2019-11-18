@@ -24,7 +24,7 @@
             {%for comment in comments%}
             <p><span style="font-weight: bolder;">{{comment.user.username}}</span> {{comment.comment}}</p>
             {%endfor%}
-            <a href="{%url 'like' post.id%}">
+            <a href="{%url 'like_post' post.id%}">
                 <i class="far fa-heart fa-lg" style="font-size: 30px; margin-right:10px; color:#fa6161"></i>
             </a>
             <i class="far fa-comment fa-lg" style="font-size: 30px;"></i>
