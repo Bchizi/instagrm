@@ -22,6 +22,6 @@ urlpatterns = [
     url(r'', include('instagrm.urls')),
     url(r'^register/$',views.register,name='register'),
     url(r'^user_login/$',views.user_login,name='user_login'),
+    url(r'^accounts/login/$',views.user_login,name='user_login'),
     url(r'^logout/$', views.user_logout, name='user_logout'),
-
 ]

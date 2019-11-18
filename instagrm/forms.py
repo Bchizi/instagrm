@@ -27,7 +27,9 @@ class UserProfileForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
-    caption = forms.CharField(widget=forms.Textarea())
+    caption = forms.CharField(widget=forms.Textarea(attrs={"class":"form-control",
+                                                           "placeholder":"Caption...",
+                                                           "rows":"4"}))
     image = ImageField(label='')
 
     class Meta:

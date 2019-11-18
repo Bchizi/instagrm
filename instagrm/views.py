@@ -11,9 +11,29 @@ from .forms import UserForm, UserProfileForm, CommentForm, PostForm
 @login_required
 def index(request):
     current_user = request.user
+    current_profile = UserProfile.objects.get(id = current_user.id)
     posts = Post.objects.all()[::-1]
+
+    if request.method == "POST":
+        post_form = PostForm(request.POST)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+
+            post.profile = current_user
+            post.user_profile = current_profile
+
+            post.save()
+            post_form = PostForm()
+            return HttpResponseRedirect(reverse("index"))
+
+    else:
+        post_form = PostForm()
+
     return render(request, "instagrm/index.html", context={"posts":posts,
-                                                           "current_user":current_user})
+                                                           "current_user":current_user,
+                                                           "current_profile":current_profile,
+                                                           "post_form":post_form})
 
 @login_required
 def profile(request, id):
