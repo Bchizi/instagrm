@@ -29,6 +29,7 @@
             </a>
             <i class="far fa-comment fa-lg" style="font-size: 30px;"></i>
             <p class="ml-2" style="font-weight: bolder; margin-top:10px">{{post.likes}} likes</p>
+            <p class="ml-2 text-muted">{{post.date|timesince|upper}}</p>
             <form class="" action="{%url 'post' post.id%}" style="border:none; padding:0; display:flex" method="POST">
                 {%csrf_token%}
                 {{comment_form}}

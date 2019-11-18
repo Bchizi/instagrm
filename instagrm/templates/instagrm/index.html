@@ -57,6 +57,7 @@
                         <p class="card-text mb-3"><span style="font-weight: bolder;">{{comment.user.username}} </span>{{comment.comment}}</p>
                         {%endif%}
                     {%endfor%}
+                    <p class="text-muted">{{post.date|timesince|upper}}</p>
                 </div>
             </div>
             {%endfor%}
