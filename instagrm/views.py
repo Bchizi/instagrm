@@ -81,6 +81,26 @@ def like_post(request, id):
 
 
 @login_required
+def search(request):
+    
+    if request.method == "GET":
+        search_term = request.GET.get("search")
+        searched_user = User.objects.get(username = search_term)
+        searched_profile = UserProfile.objects.get(id = searched_user.id)
+        posts = Post.objects.filter(profile__id=searched_user.id)[::-1]
+        message = "{}".format(search_term)
+        
+        return render(request, "instagrm/search_results.html", context={"message":message,
+                                                                        "user":searched_user,
+                                                                        "profile":searched_profile,
+                                                                        "posts":posts})
+    else:
+        message = "You have not searched for any photo"
+        return render(request, "instagrm/search_results.html", context={"message":message})
+
+
+
+@login_required
 def profile(request, id):
     user = User.objects.get(id=id)
     profile = UserProfile.objects.get(id=id)
