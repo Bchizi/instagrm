@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Post, User, UserProfile
+from .models import Post, User, UserProfile, Comment
 from .forms import UserForm, UserProfileForm, CommentForm, PostForm
 
 
@@ -13,6 +13,7 @@ def index(request):
     current_user = request.user
     current_profile = UserProfile.objects.get(id = current_user.id)
     posts = Post.objects.all()[::-1]
+    comments = Comment.objects.all()
 
     if request.method == "POST":
         post_form = PostForm(request.POST)
@@ -30,10 +31,34 @@ def index(request):
     else:
         post_form = PostForm()
 
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.user = current_user
+
+            for post in posts:
+                comment.post = post
+            comment_form.save()
+            comment_form = CommentForm()
+            return HttpResponseRedirect(reverse("index"))
+
+    else:
+        comment_form = CommentForm()
+
     return render(request, "instagrm/index.html", context={"posts":posts,
                                                            "current_user":current_user,
                                                            "current_profile":current_profile,
-                                                           "post_form":post_form})
+                                                           "post_form":post_form,
+                                                           "comments":comments,
+                                                           "comment_form":comment_form})
+
+def like(request, id):
+    post = Post.objects.get(id = id)
+    post.likes += 1
+    post.save()
+    return HttpResponseRedirect(reverse("index"))
 
 @login_required
 def profile(request, id):

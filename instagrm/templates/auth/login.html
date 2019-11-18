@@ -3,8 +3,8 @@
 {%block content%}
 <form class="form-signin" style="margin-top: 100;" method="POST">
     {% csrf_token %}
-    <h1 class="mb-4"><i class="fab fa-instagram fa-lg"></i> <span id="insta" style="padding-bottom: 20px;">Instagrm</span></h1>
-    <h1 class="h6 mb-3 font-weight-normal">Please sign in</h1>
+    <h1 class="mb-4"><span id="insta" style="padding-bottom: 20px;">Instagrm</span></h1>
+    <h1 class="h6 mb-3 font-weight-normal text-muted">Please sign in</h1>
     <label for="inputEmail" class="sr-only">Username</label>
     <input type="text" name="username" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>

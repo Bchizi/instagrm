@@ -1,5 +1,6 @@
 {%extends "instagrm/base.html"%}
 {%load staticfiles%}
+{%load bootstrap4%}
 
 {%block content%}
 
@@ -38,18 +39,29 @@
                 </div>
                 <img src="{{post.image.cdn_url}}" alt="" class="img-fluid">
                 <div class="card-body">
-                    <i class="far fa-heart fa-lg" style="font-size: 30px; margin-right:10px;"></i>
+                    <a href="{%url 'like' post.id%}">
+                        <i class="far fa-heart fa-lg" style="font-size: 30px; margin-right:10px; color:#fa6161"></i>
+                    </a>
                     <i class="far fa-comment fa-lg" style="font-size: 30px;"></i>
                 </div>
-                <div class="card-body">
+                <p class="card-text ml-4" style="font-weight: bolder;">{{post.likes}} likes</p>
+                <div class="ml-4 mb-3">
                     <p class="card-text">{{post.caption}}</p>
                 </div>
-                <form class="card-footer" style="border:none; padding:0; display:flex">
+                <div class="ml-4">
+                    {%for comment in comments%}
+                        {%if comment.id == post.id%}
+                        <p class="card-text text-muted">{{comments|length}} comments</p>
+                        <p class="card-text mb-3"><span style="font-weight: bolder;">{{comment.user.username}} </span>{{comment.comment}}</p>
+                        {%endif%}
+                    {%endfor%}
+                </div>
+                <!-- <form class="card-footer" style="border:none; padding:0; display:flex">
                     <input type="text" class="form-control comment" placeholder="Add a comment..."
                         style="border: 0 none transparent">
                     <button
                         style="background: #fff; border:none; border-radius:0; font-weight:bold; padding:10px;">Post</button>
-                </form>
+                </form> -->
             </div>
             {%endfor%}
             <div class="loader"></div>
