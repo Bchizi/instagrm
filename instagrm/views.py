@@ -86,9 +86,12 @@ def search(request):
     if request.method == "GET":
         search_term = request.GET.get("search")
         searched_user = User.objects.get(username = search_term)
-        searched_profile = UserProfile.objects.get(id = searched_user.id)
-        posts = Post.objects.filter(profile__id=searched_user.id)[::-1]
-        message = "{}".format(search_term)
+        try:
+            searched_profile = UserProfile.objects.get(id = searched_user.id)
+            posts = Post.objects.filter(profile__id=searched_user.id)[::-1]
+            message = "{}".format(search_term)
+        except DoesNotExist:
+            return HttpResponseRedirect(reverse("index"))
         
         return render(request, "instagrm/search_results.html", context={"message":message,
                                                                         "users":searched_user,
