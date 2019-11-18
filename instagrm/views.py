@@ -62,7 +62,7 @@ def user_login(request):
                 return HttpResponseRedirect(reverse("user_login")) #raise error/ flash
 
         else:
-            pass #raise error/ flash
+            return HttpResponseRedirect(reverse("user_login")) #raise error/ flash
     else:
         return render(request, "auth/login.html", context={})
 
