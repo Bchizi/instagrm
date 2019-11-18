@@ -25,7 +25,6 @@ User can like a picture and leave a comment on it.
 * jQuery 3.4.1
 * Bootstrap 4.3.1
 * Font-Awesome
-* [Baguettebox.js 1.10.0](https://feimosi.github.io/baguetteBox.js/)
 * Google Font API
 
 ## Requirements
