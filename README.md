@@ -8,6 +8,19 @@ User can upload my pictures to the application.
 User can view any profile with all pictures.
 User can like a picture and leave a comment on it.
 
+
+## Behavior Driven Development
+
+| Input                    | Behaviour                       | Output                                       |
+| -------------------------| ------------------------------  | -------------------------------------------- |
+| User registers for an account by filling form            | Page redirects user to login page               | User is redirected tpo login page               |
+| User logs in             | User is taken to the home page | Redirect you to the homepage where the user is greeted with a feed of most recent photos posted             |
+| User clicks upload button and fills the form         | The page reloads    | User's new post is displayed on the feed                     | 
+| User clicks on the like button | The page reloads | Like count of the post is increased by one value   |
+| User clicks on the comment button| User is redirected to a page containing the single post, its comments and a comment form    | A page displaring the single post is displayed                 |
+| User posts a comment by filling the form       | The page reloads    | The new comment is added onto the post's comment section , showing th comment and its author, and comment count is updated  in the feed            |
+
+
 ![alt text](screencaps/sc1.png)
 ![alt text](screencaps/sc2.png)
 ![alt text](screencaps/sc3.png)
