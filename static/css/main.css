@@ -135,7 +135,7 @@ nav form.search {
     align-items: center;
     -webkit-align-items: center;
     height: 42px;
-    width: 30px;
+    width: 30px!important;
     padding: 0 9px;
     overflow-x: hidden;
 }
@@ -218,7 +218,7 @@ nav form.search.focused.not-null.multi-char .ico-btn.clear-btn {
     animation-delay: 0.2s;
 }
 
-navbar .ico-btn {
+nav .ico-btn {
     -webkit-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -moz-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
     -ms-transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
@@ -226,7 +226,7 @@ navbar .ico-btn {
     transition: all 0.2s cubic-bezier(0.21, 0.61, 0.36, 1);
 }
 
-navbar form.search.focused.not-null .ico-btn.search-btn {
+nav form.search.focused.not-null .ico-btn.search-btn {
     visibility: visible;
     opacity: 1;
     -webkit-transition-duration: 0.6s;
@@ -296,7 +296,7 @@ nav .tab-highlighter {
 /* Base Styles */
 
 :root {
-    font-size: 10px;
+    font-size: 11px;
 }
 
 *,
