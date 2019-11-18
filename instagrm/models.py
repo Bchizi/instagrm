@@ -15,7 +15,7 @@ class UserProfile(models.Model):
 
 
 class Post(models.Model):
-    image = ImageField(blank=False, manual_crop="800x800")
+    image = ImageField(manual_crop="800x800")
     name = models.CharField(max_length=144, blank=True, default="Post")
     caption = models.TextField(blank=True)
     date = models.DateTimeField(auto_now_add=True)
