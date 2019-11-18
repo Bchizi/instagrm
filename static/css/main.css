@@ -684,3 +684,8 @@ button:focus {
     outline-color: #fff;
     outline: none;
 }
+
+.comment{
+    border: 0 none transparent;
+    height:50px;
+}

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -31,34 +31,47 @@ def index(request):
     else:
         post_form = PostForm()
 
+    
+
+    return render(request, "instagrm/index.html", context={"posts":posts,
+                                                           "current_user":current_user,
+                                                           "current_profile":current_profile,
+                                                           "post_form":post_form,
+                                                           "comments":comments,})
+
+def post(request, id):
+    post = Post.objects.get(id = id)
+    comments = Comment.objects.filter(post__id=id)
+    current_user = request.user
+    current_profile = UserProfile.objects.get(id = current_user.id)
+
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
 
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.user = current_user
-
-            for post in posts:
-                comment.post = post
-            comment_form.save()
+            comment.post = post
+            comment.save()
             comment_form = CommentForm()
-            return HttpResponseRedirect(reverse("index"))
+            return redirect("post", post.id)
 
     else:
         comment_form = CommentForm()
 
-    return render(request, "instagrm/index.html", context={"posts":posts,
-                                                           "current_user":current_user,
-                                                           "current_profile":current_profile,
-                                                           "post_form":post_form,
-                                                           "comments":comments,
-                                                           "comment_form":comment_form})
+    return render(request, "instagrm/post.html", context={"post":post,
+                                                          "current_user":current_user,
+                                                          "current_profile":current_profile,
+                                                          "comment_form":comment_form,
+                                                          "comments":comments,})
+
 
 def like(request, id):
     post = Post.objects.get(id = id)
     post.likes += 1
     post.save()
     return HttpResponseRedirect(reverse("index"))
+
 
 @login_required
 def profile(request, id):
@@ -91,10 +104,12 @@ def user_login(request):
     else:
         return render(request, "auth/login.html", context={})
 
+
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse("user_login"))
+
 
 def register(request):
     registered = False
