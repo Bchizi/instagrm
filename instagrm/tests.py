@@ -24,3 +24,15 @@ class UserTestClass(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.user, User))
+
+class UserProfileTestClass(TestCase):
+    def setUp(self):
+        self.user = User(first_name="Collins", last_name="Muriuki",
+                         username="collinsmuriuki", email="collins@gmail.com",)
+        self.user.save()
+        self.profile = UserProfile(user=self.user, bio="None",
+                                   followers=0, following=0,)
+        self.profile.save()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.profile, UserProfile))
