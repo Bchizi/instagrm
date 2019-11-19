@@ -75,7 +75,7 @@ You can provide feedback or raise any issues/ bugs through the following means:
 * murerwacollins@gmail.com
 
 ## Live Site link
-You can view the live application by following this [link](https://instagramcl0ne.herokuapp.com/).
+You can view the live application by following this [link](https://instagramcl0n3.herokuapp.com/).
 
 ## License
 #### [*GNU License*](LICENSE)

@@ -26,7 +26,7 @@ SECRET_KEY = 'ws34r00)l=_0tqenrj7b@s8w4vs35727yek(uek0dy-w_g@5f6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["instagramcl0n3.herokuapp.com"]
 
 
 # Application definition
