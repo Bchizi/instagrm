@@ -30,7 +30,7 @@ class PostForm(forms.ModelForm):
     caption = forms.CharField(widget=forms.Textarea(attrs={"class":"form-control",
                                                            "placeholder":"Caption...",
                                                            "rows":"4"}))
-    image = ImageField(label='')
+    image = ImageField(label='', manual_crop="800x800")
 
     class Meta:
         model = Post
