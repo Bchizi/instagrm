@@ -22,9 +22,9 @@
             <div class="profile-user-settings">
 
                 <h1 class="profile-user-name">{{user.username}}</h1>
-
+                <!-- {%if user.is_authenticated%}
                 <button class="btn profile-edit-btn">Edit Profile</button>
-
+                {%endif%} -->
                 <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog"
                         aria-hidden="true"></i></button>
 
@@ -62,7 +62,6 @@
         <div class="gallery">
             {%for post in posts%}
             <div class="gallery-item" tabindex="0">
-
                 <img src="{{post.image.cdn_url}}"
                     class="gallery-image" alt="">
 
